@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Racine {
@@ -9,12 +10,17 @@ public class Racine {
      * @return un {@code List} contenant les racines carrées des nombres compris entre {code A} et {code B}.
      */
 
-    private int A;
-    private int B;
-    private List<>
 
 
-    public List<Double> calculer(int A, int B) {
-        throw new RuntimeException("Not Implemented");
+
+    public double[] calculer(int A, int B){
+        double[] list = new double[B-A+1];
+        if(A<=0 || B<=0 || A==B){
+            return list;
+        }
+        for(int i = A; i<B+1; i++){
+            list[i-A]=Math.sqrt(i);
+        }
+        return list;
     }
 }
