@@ -9,6 +9,12 @@ public class Racine {
      * @param B nombre entier tel que A < B.
      * @return un {@code List} contenant les racines carrées des nombres compris entre {code A} et {code B}.
      */
+
+    private int A;
+    private int B;
+    private List<>
+
+
     public List<Double> calculer(int A, int B) {
         throw new RuntimeException("Not Implemented");
     }

@@ -20,11 +20,19 @@ class MatriceTest {
 
     @Test
     void verifie_paramètre_ligne(){
-        assertEquals("Une dimension n'est pas bonne", matrice.creation(-2, 5, 6, 8));
+        try{
+            matrice.creation(-2, 5, 6, 8);
+            fail("Une dimension n'est pas bonne");
+        } catch(IllegalStateException ignored){
+        }
     }
 
     void verifie_paramètre_colonne(){
-        assertEquals("Une dimension n'est pas bonne", matrice.creation(2, -5, 6, 8));
+        try{
+            matrice.creation(2, -5, 6, 8);
+            fail("Une dimension n'est pas bonne");
+        } catch(IllegalStateException ignored){
+        }
     }
 
     void verifie_B_plus_petit_A(){
@@ -33,9 +41,12 @@ class MatriceTest {
 
     @Test
     void verifie_valeur(){
-        for(int i = 0; i<matrice.M; i++){
-            for(int j = 0; j<matrice.N;j++){
-                assertTrue(matrice.A<matrice.data[i][j]<matrice.B);
+        Matrice m = new Matrice();
+        m = matrice.creation(4, 5, 6, 7);
+        for(int i = 0; i<m.M; i++){
+            for(int j = 0; j<m.N;j++){
+
+                assertTrue(m.A<m.data[i][j]<m.B);
             }
         }
     }
