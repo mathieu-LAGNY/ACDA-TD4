@@ -16,6 +16,7 @@ class RacineTest {
 
     @AfterEach
     void tearDown() {
+        racine = null;
     }
 
     @Test
